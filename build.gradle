@@ -17,7 +17,7 @@ apply plugin: 'maven-publish'
 
 publishing {
     publications {
-        maven(MavenPublication) {
+        create("maven", MavenPublication) {
             artifact("build/libs/my-app-$version"+".jar"){
                 extension 'jar'
             }
@@ -27,7 +27,7 @@ publishing {
     repositories {
         maven {
             name 'nexus'
-            url "http://xx.xx.xx.xx:xxxx/repository/maven-snapshots/" 
+            url "http://143.198.47.136:8081/repository/maven-snapshots/"
             allowInsecureProtocol = true
             credentials {
                 username project.repoUser
